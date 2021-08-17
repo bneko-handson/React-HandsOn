@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test-build-deploy:
 
     runs-on: ubuntu-latest
 
@@ -30,4 +30,4 @@ jobs:
 
       - name: Copy files to the test website with the AWS CLI
         run: |
-          aws s3 sync build/ s3://20210713-bneko-react-handson
+          aws s3 sync build/ s3://20210713-bneko-react-handson --delete
